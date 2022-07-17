@@ -31,6 +31,7 @@ namespace prjMedicalCenter
         {
             this.btnAppointment = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCheckAppointment = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAppointment
@@ -54,11 +55,22 @@ namespace prjMedicalCenter
             this.button1.Text = "員工專區";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // btnCheckAppointment
+            // 
+            this.btnCheckAppointment.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnCheckAppointment.Location = new System.Drawing.Point(610, 270);
+            this.btnCheckAppointment.Name = "btnCheckAppointment";
+            this.btnCheckAppointment.Size = new System.Drawing.Size(122, 50);
+            this.btnCheckAppointment.TabIndex = 2;
+            this.btnCheckAppointment.Text = "掛號查詢";
+            this.btnCheckAppointment.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 572);
+            this.Controls.Add(this.btnCheckAppointment);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAppointment);
             this.Name = "MainForm";
@@ -72,6 +84,7 @@ namespace prjMedicalCenter
 
         private System.Windows.Forms.Button btnAppointment;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCheckAppointment;
     }
 }
 
