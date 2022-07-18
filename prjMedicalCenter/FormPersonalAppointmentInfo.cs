@@ -92,12 +92,31 @@ namespace prjMedicalCenter
                 IsVerificationHasText = true;
             }
         }
-
         private void labelRefreshVerification_Click(object sender, EventArgs e)
         {
             labelVerification.Text = Guid.NewGuid().ToString().Substring(0, 4);
         }
 
-        
+        private void btnAllClear_Click(object sender, EventArgs e)
+        {
+            textBoxID.Text = "";
+            textBoxID_Leave(sender, e);
+            textBoxDOB.Text = "";
+            textBoxDOB_Leave(sender, e);
+            textBoxVerification.Text = "";
+            textBoxVerification_Leave(sender, e);
+            labelRefreshVerification_Click(sender, e);
+        }
+
+        private void btnAppointment_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("掛號成功");
+        }
+
+        private void linkLabelPatientFirstTimeInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormPatientFirstTimeInfo f = new FormPatientFirstTimeInfo();
+            f.Show();
+        }
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="FormAppointment.Designer.cs">
       <DependentUpon>FormAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPatientFirstTimeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPatientFirstTimeInfo.Designer.cs">
+      <DependentUpon>FormPatientFirstTimeInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPersonalAppointmentInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAppointment.resx">
       <DependentUpon>FormAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPatientFirstTimeInfo.resx">
+      <DependentUpon>FormPatientFirstTimeInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPersonalAppointmentInfo.resx">
       <DependentUpon>FormPersonalAppointmentInfo.cs</DependentUpon>

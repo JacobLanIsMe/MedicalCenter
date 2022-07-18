@@ -31,7 +31,7 @@ namespace prjMedicalCenter
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelPatientFirstTimeInfo = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButtonPassportNumber = new System.Windows.Forms.RadioButton();
             this.radioButtonMedicalRecordNumber = new System.Windows.Forms.RadioButton();
@@ -42,8 +42,8 @@ namespace prjMedicalCenter
             this.label3 = new System.Windows.Forms.Label();
             this.labelVerification = new System.Windows.Forms.Label();
             this.labelRefreshVerification = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAppointment = new System.Windows.Forms.Button();
+            this.btnAllClear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,18 +67,19 @@ namespace prjMedicalCenter
             this.label2.TabIndex = 1;
             this.label2.Text = "複診: 請擇一輸入身分證字號、病歷號、護照號碼，並請確實填寫。";
             // 
-            // linkLabel1
+            // linkLabelPatientFirstTimeInfo
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(7, 2);
-            this.linkLabel1.Location = new System.Drawing.Point(29, 101);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(339, 29);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "初診: 請點此連結輸入個人初診資料。";
-            this.linkLabel1.UseCompatibleTextRendering = true;
+            this.linkLabelPatientFirstTimeInfo.AutoSize = true;
+            this.linkLabelPatientFirstTimeInfo.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.linkLabelPatientFirstTimeInfo.LinkArea = new System.Windows.Forms.LinkArea(7, 2);
+            this.linkLabelPatientFirstTimeInfo.Location = new System.Drawing.Point(29, 101);
+            this.linkLabelPatientFirstTimeInfo.Name = "linkLabelPatientFirstTimeInfo";
+            this.linkLabelPatientFirstTimeInfo.Size = new System.Drawing.Size(339, 29);
+            this.linkLabelPatientFirstTimeInfo.TabIndex = 3;
+            this.linkLabelPatientFirstTimeInfo.TabStop = true;
+            this.linkLabelPatientFirstTimeInfo.Text = "初診: 請點此連結輸入個人初診資料。";
+            this.linkLabelPatientFirstTimeInfo.UseCompatibleTextRendering = true;
+            this.linkLabelPatientFirstTimeInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelPatientFirstTimeInfo_LinkClicked);
             // 
             // panel1
             // 
@@ -152,11 +153,11 @@ namespace prjMedicalCenter
             // 
             // textBoxVerification
             // 
-            this.textBoxVerification.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxVerification.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxVerification.ForeColor = System.Drawing.Color.Gray;
             this.textBoxVerification.Location = new System.Drawing.Point(29, 274);
             this.textBoxVerification.Name = "textBoxVerification";
-            this.textBoxVerification.Size = new System.Drawing.Size(317, 29);
+            this.textBoxVerification.Size = new System.Drawing.Size(317, 30);
             this.textBoxVerification.TabIndex = 7;
             this.textBoxVerification.Text = "請輸入驗證碼";
             this.textBoxVerification.Enter += new System.EventHandler(this.textBoxVerification_Enter);
@@ -193,33 +194,35 @@ namespace prjMedicalCenter
             this.labelRefreshVerification.Text = "點擊刷新";
             this.labelRefreshVerification.Click += new System.EventHandler(this.labelRefreshVerification_Click);
             // 
-            // button1
+            // btnAppointment
             // 
-            this.button1.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(258, 359);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 39);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "掛號";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAppointment.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnAppointment.Location = new System.Drawing.Point(258, 359);
+            this.btnAppointment.Name = "btnAppointment";
+            this.btnAppointment.Size = new System.Drawing.Size(143, 39);
+            this.btnAppointment.TabIndex = 14;
+            this.btnAppointment.Text = "掛號";
+            this.btnAppointment.UseVisualStyleBackColor = true;
+            this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
-            // button2
+            // btnAllClear
             // 
-            this.button2.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(427, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 39);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "重新填寫";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAllClear.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnAllClear.Location = new System.Drawing.Point(427, 359);
+            this.btnAllClear.Name = "btnAllClear";
+            this.btnAllClear.Size = new System.Drawing.Size(143, 39);
+            this.btnAllClear.TabIndex = 15;
+            this.btnAllClear.Text = "重新填寫";
+            this.btnAllClear.UseVisualStyleBackColor = true;
+            this.btnAllClear.Click += new System.EventHandler(this.btnAllClear_Click);
             // 
             // FormPersonalAppointmentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAllClear);
+            this.Controls.Add(this.btnAppointment);
             this.Controls.Add(this.labelRefreshVerification);
             this.Controls.Add(this.labelVerification);
             this.Controls.Add(this.label3);
@@ -227,7 +230,7 @@ namespace prjMedicalCenter
             this.Controls.Add(this.textBoxDOB);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkLabelPatientFirstTimeInfo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormPersonalAppointmentInfo";
@@ -245,7 +248,7 @@ namespace prjMedicalCenter
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabelPatientFirstTimeInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton radioButtonPassportNumber;
         private System.Windows.Forms.RadioButton radioButtonMedicalRecordNumber;
@@ -256,7 +259,7 @@ namespace prjMedicalCenter
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelVerification;
         private System.Windows.Forms.Label labelRefreshVerification;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAppointment;
+        private System.Windows.Forms.Button btnAllClear;
     }
 }
